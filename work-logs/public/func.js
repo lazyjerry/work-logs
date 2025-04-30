@@ -66,7 +66,6 @@ function addWorkItemField() {
   const container = document.getElementById("work-items-container");
   const template = document.querySelector(".work-item").cloneNode(true);
   template.querySelectorAll("input, textarea").forEach(i => i.value = "");
-  $(template.querySelector(".item-status")).select2({ placeholder: "選擇狀態", allowClear: true, width: "100%" });
   container.appendChild(template);
   template.querySelector(".remove-item").addEventListener("click", () => {
     if (container.children.length > 1) container.removeChild(template);
@@ -422,10 +421,18 @@ function autoFillRandomData() {
   }
 
   const statuses = ["尚未開始", "進行中", "已完成", "審核中", "擱置"];
+  const descriptions = [
+    ` 臣亮言：先帝創業未半，而中道崩殂。\n今天下三分，益州疲弊，此誠危急存亡之秋也。\n然侍衛之臣，不懈於內；忠志之士，忘身於外者，蓋追先帝之殊遇，欲報之於陛下也。\n誠宜開張聖聽，以光先帝遺德，恢弘志士之氣；不宜妄自菲薄，引喻失義，以塞忠諫之路也。\n宮中府中，俱為體，陟罰臧否，不宜異同。\n若有作姦犯科，及為忠善者，宜付有司，論其刑賞，以昭陛下平明之治，不宜篇私，使內外異法也。\n侍中、侍郎郭攸之、費褘、董允等，此皆良實，志慮忠純，是以先帝簡拔以遺陛下。\n愚以為宮中之事，事無大小，悉以咨之，然後施行，必能裨補闕漏，有所廣益。\n將軍向寵，性行淑均，曉暢軍事，試用於昔日，先帝稱之曰「能」，是以眾議舉寵為督。\n愚以為營中之事，悉以咨之，必能使行陣和睦，優劣得所。\n親賢臣，遠小人，此先漢所以興隆也；親小人，遠賢臣，此後漢所以傾頹也。\n先帝在時，每與臣論此事，未嘗不歎息痛恨於桓、靈也。\n侍中、尚書、長史；參軍，此悉貞良死節之臣也，願陛下親之信之，則漢室之隆，可計日而待也。`,
+    `臣受命之日，寢不安席，食不甘味。\n思惟北征，宜先入南，故五月渡瀘，深入不毛，并日而食。\n臣非不自惜也，顧王業不可偏安於蜀都，故冒危難，以奉先帝之遺意。\n而議者謂為非計。\n今賊適疲於西，又務於東。\n兵法乘勞，此進趨之時也。`,
+    `夫難平者，事也。\n昔先帝敗軍於楚，當此時，曹操拊手，謂天下已定。\n然後先帝東連吳越，西取巴蜀，舉兵北征，夏侯授首：此操之失計，而漢事將成也。\n然後吳更違盟，關羽毀敗，秭歸蹉跌，曹丕稱帝。\n凡事如是，難可逆料。\n臣鞠躬盡瘁，死而後已。\n至於成敗利鈍，非臣之明所能逆睹也。`,
+    `臣本布衣，躬耕於南陽，苟全性命於亂世，不求聞達於諸侯。\n先帝不以臣卑鄙，猥自枉屈，三顧臣於草廬之中，諮臣以當世之事，由是感激，遂許先帝以驅馳。\n後值傾覆，受任於敗軍之際，奉命於危難之間，爾來二十有一年矣！先帝知臣謹慎，故臨崩寄臣以大事也。\n受命以來，夙夜憂勤，恐託付不效，以傷先帝之明。\n故五月渡瀘，深入不毛。\n今南方已定，兵甲已足，當獎率三軍，北定中原，庶竭駑鈍，攘除奸凶，興復漢室，還於舊都；此臣所以報先帝而忠陛下之職分也。\n至於斟酌損益，進盡忠言，則攸之、褘、允之任也。\n願陛下託臣以討賊興復之效；不效，則治臣之罪，以告先帝之靈。\n若無興德之言，則戮允等，以彰其慢。\n陛下亦宜自課，以諮諏善道，察納雅言，深追先帝遺詔，臣不勝受恩感激。\n今當遠離，臨表涕零，不知所云。`,
+    `先帝慮漢賊不兩立，王業不偏安，故託臣以討賊也。\n以先帝之明，量臣之才，固知臣伐賊，才弱敵彊也。\n然不伐賊，王業亦亡；惟坐而待亡，孰與伐之？是故託臣而弗疑也。`
+  ]
   document.querySelectorAll(".work-item").forEach((item, idx) => {
     // 隨機名稱與描述
     item.querySelector(".item-name").value = `測試項目 ${idx + 1}`;
-    item.querySelector(".item-description").value = `這是第 ${idx + 1} 項的隨機描述。 \n臣亮言：先帝創業未半，而中道崩殂。今天下三分，益州疲弊，此誠危急存亡之秋也。\n然侍衛之臣，不懈於內；忠志之士，忘身於外者，蓋追先帝之殊遇，欲報之於陛下也。\n誠宜開張聖聽，以光先帝遺德，恢弘志士之氣；不宜妄自菲薄，引喻失義，以塞忠諫之路也。宮中府中，俱為體，陟罰臧否，不宜異同。\n若有作姦犯科，及為忠善者，宜付有司，論其刑賞，以昭陛下平明之治，不宜篇私，使內外異法也。侍中、侍郎郭攸之、費褘、董允等，此皆良實，志慮忠純，是以先帝簡拔以遺陛下。\n愚以為宮中之事，事無大小，悉以咨之，然後施行，必能裨補闕漏，有所廣益。將軍向寵，性行淑均，曉暢軍事，試用於昔日，先帝稱之曰「能」，是以眾議舉寵為督。愚以為營中之事，悉以咨之，必能使行陣和睦，優劣得所。親賢臣，遠小人，此先漢所以興隆也；親小人，遠賢臣，此後漢所以傾頹也。先帝在時，每與臣論此事，未嘗不歎息痛恨於桓、靈也。侍中、尚書、長史；參軍，此悉貞良死節之臣也，願陛下親之信之，則漢室之隆，可計日而待也。`;  
+    const des = statuses[Math.floor(Math.random() * statuses.length)];
+    item.querySelector(".item-description").value = `這是第 ${idx + 1} 項的隨機描述。\n` + descriptions[Math.floor(Math.random() * descriptions.length)];   
     // 隨機狀態
     const sel = $(item.querySelector(".item-status"));
     const st = statuses[Math.floor(Math.random() * statuses.length)];

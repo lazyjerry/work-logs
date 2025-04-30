@@ -1,6 +1,4 @@
 document.addEventListener("DOMContentLoaded", async function () {
-  // 初始化 Select2
-  $(".select2-single").select2({ placeholder: "選擇狀態", allowClear: true, width: "100%" });
 
   // 初始化 flatpickr
   flatpickr(".datepicker", { dateFormat: "Y-m-d H:i", enableTime: true, time_24hr: true, locale: "zh_tw", allowInput: true });
