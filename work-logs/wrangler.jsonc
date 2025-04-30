@@ -1,0 +1,20 @@
+{
+	"$schema": "node_modules/wrangler/config-schema.json",
+	"name": "work-logs",
+	"main": "src/index.ts",
+	"compatibility_date": "2025-04-24",
+	"observability": {
+		"enabled": true
+	},
+	"assets": {
+		"directory": "./public",
+		"binding": "ASSETS"
+	},
+	"d1_databases": [
+		{
+			"binding": "WORKLOG_DB",
+			"database_id": "989464c4-f4a5-4c8e-bea4-d1e78615792f",
+			"database_name": "worklog"
+		}
+	]
+}
