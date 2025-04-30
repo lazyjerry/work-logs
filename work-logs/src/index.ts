@@ -12,7 +12,7 @@ interface Env {
 const app = new Hono<{ Bindings: Env }>();
 
 // Basic Auth Middleware
-app.use("/logs", async (c, next) => {
+app.use("*", async (c, next) => {
 	const auth = c.req.header("Authorization") || "";
 	// 預期格式 "Basic base64(username:password)"
 	if (!auth.startsWith("Basic ")) {

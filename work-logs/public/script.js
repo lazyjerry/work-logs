@@ -12,7 +12,12 @@ document.addEventListener("DOMContentLoaded", async function () {
   document.getElementById("add-work-item").addEventListener("click", addWorkItemField);
 
   // 重設表單
-  document.getElementById("reset-form").addEventListener("click", resetForm);
+  document.getElementById("reset-form").addEventListener("click", () => {
+    if(!confirm("確定要重設表單嗎？")){
+      return;
+    }
+    resetForm();
+  });
 
   // 清除搜尋欄位
   document.querySelectorAll(".clear-search").forEach((button) => {

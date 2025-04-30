@@ -61,9 +61,6 @@ function addWorkItemField() {
 
 // 重設表單
 function resetForm() {
-  if(!confirm("確定要重設表單嗎？")){
-    return;
-  }
   // 清除工作項目欄位
   const container = document.getElementById("work-items-container");
   while (container.children.length > 1) container.removeChild(container.lastChild);
