@@ -128,4 +128,4 @@ wrangler publish --env production
 
 ## License
 
-MIT © Jerry Lin. (https://github.com/lazyjerry）
+MIT © Jerry Lin. [https://github.com/lazyjerry](https://github.com/lazyjerry/work-logs/blob/master/LICENSE)
