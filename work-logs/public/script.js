@@ -17,6 +17,15 @@ document.addEventListener("DOMContentLoaded", async function () {
     resetForm();
   });
 
+  
+  document.getElementById("refresh-page").addEventListener("click", () => {
+    if(!confirm("確定要刷新頁面嗎？")){
+      return;
+    }
+    this.location.reload();
+  });
+
+
   // 清除搜尋欄位
   document.querySelectorAll(".clear-search").forEach((button) => {
     button.addEventListener("click", function () {

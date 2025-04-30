@@ -11,7 +11,7 @@ async function loadLogs(append = false,delayTime = 0) {
 
   if (delayTime > 0) {
     // delayTime 以秒為單位，轉成毫秒
-    await sleep(delayTime * 1 * 1000);
+    await sleep(delayTime * 1 * 500);
   }
 
   if (!append) {
@@ -51,6 +51,9 @@ async function loadLogs(append = false,delayTime = 0) {
       workLogs = newLogs;
     }
     offset += newLogs.length;  // 更新 offset
+
+    console.log("loadLogs offset",offset);
+
     resetForm();          // 重設表單
     renderWorkLogs(append, newLogs);          // 重繪列表
   } catch (err) {
@@ -165,8 +168,8 @@ async function saveWorkLog() {
     });
     if (!res.ok) throw new Error('Create failed');
     showToast("工作紀錄已儲存", "success");
-    // resetForm();
-    
+    resetForm();
+    hasMore = true; // 重設 hasMore
     loadLogs(false,1);
   } catch (err) {
     console.error(err);
@@ -335,8 +338,7 @@ function showLogDetails(logId) {
 
   // 取得 YYYY-MM-DD HH:mm 格式
   const formatted = getLocalTime(log.date);
-  console.log("log.date",log.date);
-  console.log("formatted",formatted);
+  
 
   document.getElementById("modal-title").textContent = log.title;
   document.getElementById("modal-date").textContent = `紀錄時間: ${formatted}`;
