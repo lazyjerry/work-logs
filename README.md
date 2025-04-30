@@ -2,6 +2,11 @@
 
 這是一個使用 [Hono](https://hono.dev/) 框架與 Cloudflare D1 資料庫實作的工作日誌後端 API，並搭配靜態前端頁面提供完整的 CRUD 功能（新增、讀取、刪除），以及簡易的 Basic Auth 保護。
 
+# DEMO
+
+Demo 網址：https://work-logs.crazyjerry.workers.dev
+需要 Base Auth admin:123456
+
 ## 特性
 
 - 使用 Hono 建立輕量級 API
