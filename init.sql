@@ -14,3 +14,7 @@ CREATE TABLE logs (
          SET updated_at = CURRENT_TIMESTAMP
        WHERE id = old.id;
     END;
+
+    CREATE INDEX IF NOT EXISTS idx_logs_created_at ON logs(created_at);
+    CREATE INDEX IF NOT EXISTS idx_logs_name ON logs(name);
+    CREATE INDEX IF NOT EXISTS idx_logs_content ON logs(content);
