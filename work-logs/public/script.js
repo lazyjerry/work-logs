@@ -6,8 +6,8 @@ document.addEventListener("DOMContentLoaded", async function () {
   flatpickr(".datepicker", { dateFormat: "Y-m-d H:i", enableTime: true, time_24hr: true, locale: "zh_tw", allowInput: true });
 
   // 首次抓取並渲染日誌
-  await loadLogs();
-
+  loadLogs(false, 0 );
+  
   // 新增工作項目
   document.getElementById("add-work-item").addEventListener("click", addWorkItemField);
 
@@ -86,9 +86,8 @@ document.addEventListener("DOMContentLoaded", async function () {
     hasMore = true;
   
     // 清除現有列表並載入新結果
-    loadLogs(false);
+    loadLogs(false, 0);
   });
-
 });
 
 

@@ -23,7 +23,7 @@ app.use("*", async (c, next) => {
 	const [user, pass] = atob(auth.slice(6)).split(":", 2);
 	// 這裡 user 可以固定值（例如 "admin"），或忽略只比對密碼
 	const validPassword = c.env.BASIC_AUTH_PASSWORD;
-	console.log("validPassword", validPassword);
+	// console.log("validPassword", validPassword);
 	if (user !== "admin" || pass !== validPassword) {
 		return c.text("Unauthorized", 401, { "WWW-Authenticate": 'Basic realm="Secure Area"' });
 	}
