@@ -18,6 +18,9 @@ Demo 網址：https://work-logs.crazyjerry.workers.dev
 
 ## 目錄結構
 
+- 根目錄 init.sql 為初始化 D1 資料結構。
+- Insomnia_API.yaml 為 Insomnia 的 API 設定檔，可測試 API
+
 ```
 work-logs/
 │
@@ -29,7 +32,7 @@ work-logs/
 ├── src/                # 後端 Hono Worker 程式碼
 │   └── index.ts
 ├── wrangler.jsonc      # Wrangler 設定檔
-└── README.md           # 專案說明
+└── README.md           # hono 預設的部屬說明
 ```
 
 ## 前置需求

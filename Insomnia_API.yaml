@@ -1,0 +1,117 @@
+type: collection.insomnia.rest/5.0
+name: WorkLogs 工作紀錄
+meta:
+  id: wrk_14d4fe53a4444a26949548246940cccc
+  created: 1745935381453
+  modified: 1745935381453
+collection:
+  - url: http://127.0.0.1:8787/logs
+    name: 新增
+    meta:
+      id: req_c2dfe60788d74ed9817d59944973b35d
+      created: 1745935491921
+      modified: 1745935518278
+      isPrivate: false
+      sortKey: -1745935491921
+    method: POST
+    body:
+      text: '{"name":"撰寫 D1 整合說明","content":"完成 CRUD 路由"}'
+      mimeType: application/json
+    headers:
+      - name: Content-Type
+        value: application/json
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://127.0.0.1:8787/logs
+    name: 取列表
+    meta:
+      id: req_94cfb6ec9d31457e908e929b8894176a
+      created: 1745935526078
+      modified: 1745935535334
+      isPrivate: false
+      sortKey: -1745935526078
+    method: GET
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://127.0.0.1:8787/logs/1
+    name: 取單筆
+    meta:
+      id: req_83c4c28eab944817951ef596772200cb
+      created: 1745935545367
+      modified: 1745935565798
+      isPrivate: false
+      sortKey: -1745935545367
+    method: GET
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://127.0.0.1:8787/logs/1
+    name: 更新
+    meta:
+      id: req_892403a812474349b7ebda2e1db0a338
+      created: 1745935574419
+      modified: 1745935582058
+      isPrivate: false
+      sortKey: -1745935574419
+    method: PUT
+    body:
+      text: '{"name":"更新標題","content":"更新內容文字"}'
+      mimeType: application/json
+    headers:
+      - name: Content-Type
+        value: application/json
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://127.0.0.1:8787/logs/1
+    name: 刪除
+    meta:
+      id: req_01405dbd9cc24c6d89990206b8492248
+      created: 1745935590646
+      modified: 1745935596370
+      isPrivate: false
+      sortKey: -1745935590646
+    method: DELETE
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+cookieJar:
+  name: Default Jar
+  meta:
+    id: jar_9db7b7de3a707c369e9d28fd48aab9c1afe05069
+    created: 1745935381455
+    modified: 1745935381455
+environments:
+  name: Base Environment
+  meta:
+    id: env_9db7b7de3a707c369e9d28fd48aab9c1afe05069
+    created: 1745935381455
+    modified: 1745935381455
+    isPrivate: false
