@@ -1,6 +1,6 @@
 # 工作日誌系統
 
-這是一個使用 [Hono](https://hono.dev/) 框架與 Cloudflare D1 資料庫實作的工作日誌後端 API，並搭配靜態前端頁面提供完整的 CRUD 功能（新增、讀取、刪除），以及簡易的 Basic Auth 保護。
+這是一個使用 [Hono](https://hono.dev/) 框架與 Cloudflare D1 資料庫實作的工作日誌後端 API，並搭配靜態前端頁面提供 CRUD 功能（新增、讀取、刪除），以及簡易的 Basic Auth 保護。
 
 # DEMO
 
@@ -95,19 +95,35 @@ wrangler dev
 
 ## 設定生產環境 Secret
 
+確認登入帳號：
+
+```bash
+wrangler whoami
+```
+
+或是操作登入登出
+
+```bash
+wrangler logout
+# 登出
+wrangler login
+# 登入
+```
+
 使用 Wrangler CLI 把密碼安全地存入 Cloudflare Worker：
 
 ```bash
 npx wrangler secret put BASIC_AUTH_PASSWORD
-# 依提示輸入你的生產環境密碼
+# 依提示輸入你的生產環境密碼，此前需要先部屬 Cloudflare Worker
 ```
 
 > Secret 僅存在於 Cloudflare 運行環境，不會出現在程式碼或版本控制中。
+> Secret 儲存的 scope 在該 Cloudflare Worker 專案中
 
 ## 部署到生產
 
 ```bash
-wrangler publish --env production
+wrangler deploy
 ```
 
 - 發布後，API 會依 `wrangler.jsonc` 中 `env.production.route` 與 `zone_id` 綁定到你的正式域名。
