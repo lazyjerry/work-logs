@@ -169,7 +169,7 @@ async function saveWorkLog() {
     if (!res.ok) throw new Error('Create failed');
     showToast("工作紀錄已儲存", "success");
     resetForm();
-    hasMore = true; // 重設 hasMore
+    hasMore = true; // 重設 hasMore 
     loadLogs(false,1);
   } catch (err) {
     console.error(err);
