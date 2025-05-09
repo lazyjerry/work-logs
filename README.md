@@ -5,7 +5,7 @@
 # DEMO
 
 Demo 網址：https://work-logs.crazyjerry.workers.dev
-需要 Base Auth admin:123456
+需要 Basic Auth admin:123456
 
 ## 特性
 
